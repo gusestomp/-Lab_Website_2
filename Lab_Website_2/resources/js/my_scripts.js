@@ -156,7 +156,14 @@ function loadStatsPage()
 			
 function loadPlayersPage()
 {
-	var 
+	for (var playerNum = 0 ; playerNum < players.length ; playerNum++)
+	{
+		var aTag = document.createElement('a');
+		aTag.href = "#";
+		document.getElementById('player_selector').innerHTML = players[playerNum].name;
+		document.getElementById('player_selector').appendChild(aTag);
+		aTag.onclick = switchPlayers(playerNum);
+	}
 }
 
 
